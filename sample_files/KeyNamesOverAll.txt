@@ -1,0 +1,167 @@
+ this.mrn = obj["ENTERPRISE_MRN"];
+    this.navigation_cohort = 1; //all csv patients are screening
+    this.name_first = _.startCase(_.toLower(obj["PAT_NAME"].split(',')[1]));
+    if (this.name_first.split(' ').length > 1)
+    {
+      this.name_middle = _.startCase(_.toLower(this.name_first.split(' ')[1]));
+      this.name_first = _.startCase(_.toLower(this.name_first.split(' ')[0]));
+    }
+    this.name_last = _.startCase(_.toLower(obj["PAT_NAME"].split(',')[0]));
+    // this.ssn = obj["Patient SSN"] ? obj["Patient SSN"] : null;
+    // this.ssn_refusal = obj["Refused To Answer SSN"] == "Y" ? 0 : 1;
+    // this.sex = PendingPatient.mapCCFSex(obj["Patient Sex"]);
+    // this.dob = this.parseDate(obj["Date Of Birth"] + ' MST');
+    this.campus_id = 1;
+    // this.refused_medicare_id = obj["Refused Medicare ID"] && obj["Refused Medicare ID"] == "Y" ? 0 : 1;
+    // this.medicare_id = obj["Medicare Beneficiary ID"] ? obj["Medicare Beneficiary ID"] : null;
+    // this.vital_status_date = obj["Date Of Death"] ? this.parseDate(obj["Date Of Death"] + ' MST') : null;
+    // this.vital_status = this.vital_status_date ? 2 : 1;
+    // this.vital_cause = PendingPatient.mapCCFCauseOfDeathCSV(obj["Cause Of Death"]);
+    // this.vital_cause_other = obj["Other Method Of Determining"] ? obj["Other Method Of Determining"] : null;
+    // this.vital_cause_determined = PendingPatient.mapCCFVitalCauseDeterminedCSV(obj["How Cause Was Determined"]);
+    // this.address = `${obj["address_line_1"] || ''}`.trim();
+    // this.address = this.address[0] === ',' ? null : this.address;
+    // this.address = this.address ? this.address : null;
+    // this.city = obj["city"] ? obj["city"] : null;
+    // this.state = obj["State"] ? obj["State"] : null;
+    // this.zip = !obj["postal_code"] ? null : obj["postal_code"];
+    // this.race = PendingPatient.mapCCFRaceCSV(obj["Patient Race"]);
+    // this.ethnicity = PendingPatient.mapCCFEthnicityCSV(obj["Patient Ethnicity"]);
+    // this.marital_status = PendingPatient.mapMaritalStatusHca(obj.maritalStatus);
+    // this.pregnancy = null;
+    this.is_active = false;
+    // this.is_pending = true;
+    // this.is_completed = false;
+    // this.insurance_medicare = null;
+    // this.insurance_medicaid = null;
+    // this.insurance_private = null;
+    // this.insurance_va = null;
+    // this.insurance_military = null;
+    // this.insurance_self = null;
+    // this.insurance_unknown = null;
+    // this.family_history_lung_cancer = null;
+    // this.education = PendingPatient.mapCCFEducationCSV(obj['Education Level']);
+    // this.education_other = obj['Education Level Other Spec'];
+    // this.income = null;
+    // this.hcs_pcp = null;
+    // this.hcs_visit_first = null;
+    // this.hcs_visit_last = null;
+    // this.hmo_date = null;
+    // this.hmo_date_end = null;
+    // this.insurance_medicare_id = null;
+    // this.ct_exam_result_modifier_c = PendingPatient.mapNYU1(obj['CT Exam Result Modifier C']);
+    // this.year_since_prior_diagnosis = (obj['Years Since Prior Diagnosis']) ? (obj['Years Since Prior Diagnosis']) : null;
+    // this.lung_cancer_in_first_deg_rel = PendingPatient.mapNYU1(obj['Lung Cancer In First Deg Rel']);
+    // this.lung_cancer_other_first_deg_rel = PendingPatient.mapNYU1(obj['Lung Cancer Other First Deg Rel']);
+    // this.health_insurance = PendingPatient.mapCCFHealthIncuranceCSV(obj['Health Insurance']);
+    // this.history_lung_cancer = obj['Cancer Related History'] ? 1 : 0;
+    // this.history_cancer = PendingPatient.mapCCFHistoryCancerCSV(obj['Cancer Related History']);
+    // this.history_cancer_other = obj['Cancer Related History Other Spec'];
+    // this.history_COPD = PendingPatient.mapNYU(obj['COPD']);
+    // this.history_pulmonary_fibrosis = null;
+    // this.vital_invasive_within_30_days = PendingPatient.mapNYU(obj['Death Within 30 Days']);
+    // this.vital_cause_determined_other = null;
+    // this.comorbidity_miocardial_infarction = null;
+    // this.comorbidity_cerebrovascular = null;
+    // this.comorbidity_dementia = null;
+    // this.comorbidity_copd = (~(obj['Patient Other Comorbidities']).toString().indexOf('0')) ? true : false;
+    // this.comorbidity_emphysema = (~(obj['Patient Other Comorbidities']).toString().indexOf('1')) ? true : false;
+    // this.comorbidity_pulmonary_fibrosis = (~(obj['Patient Other Comorbidities']).toString().indexOf('2')) ? true : false;
+    // this.comorbidity_artery = (~(obj['Patient Other Comorbidities']).toString().indexOf('3')) ? true : false;
+    // this.comorbidity_congestive_heart = (~(obj['Patient Other Comorbidities']).toString().indexOf('4')) ? true : false;
+    // this.comorbidity_peripheral_vascular = (~(obj['Patient Other Comorbidities']).toString().indexOf('5')) ? true : false;
+    // this.comorbidity_lung_cancer = (~(obj['Patient Other Comorbidities']).toString().indexOf('6')) ? true : false;
+    // this.comorbidity_other_then_lung = (~(obj['Patient Other Comorbidities']).toString().indexOf('7')) ? true : false;
+    // this.comorbidity_other = (~(obj['Patient Other Comorbidities']).toString().indexOf('8')) ? true : false;
+    // this.comorbidity_rheumatological = null;
+    // this.comorbidity_peptic_ulcer = null;
+    // this.comorbidity_liver_disease_mild = null;
+    // this.comorbidity_diabetes = null;
+    // this.comorbidity_diabetus_complications = null;
+    // this.comorbidity_plegia = null;
+    // this.comorbidity_renal = null;
+    // this.comorbidity_malignancy = null;
+    // this.comorbidity_liver_disease_severe = null;
+    // this.comorbidity_metastatic_tumor = null;
+    // this.comorbidity_aids = null;
+    // this.risk_exposure_radon = obj['Radon Exposure'] == "Y" ? true : null;
+    // this.risk_exposure_silica = (~(obj['Occupational Exposures']).toString().indexOf('0')) ? true : false;
+    // this.risk_exposure_cadmium = (~(obj['Occupational Exposures']).toString().indexOf('1')) ? true : false;
+    // this.risk_exposure_asbestos = (~(obj['Occupational Exposures']).toString().indexOf('2')) ? true : false;
+    // this.risk_exposure_arsenic = (~(obj['Occupational Exposures']).toString().indexOf('3')) ? true : false;
+    // this.risk_exposure_beryllium = (~(obj['Occupational Exposures']).toString().indexOf('4')) ? true : false;
+    // this.risk_exposure_chromium = (~(obj['Occupational Exposures']).toString().indexOf('5')) ? true : false;
+    // this.risk_exposure_diesel = (~(obj['Occupational Exposures']).toString().indexOf('6')) ? true : false;
+    // this.risk_exposure_nickel = (~(obj['Occupational Exposures']).toString().indexOf('7')) ? true : false;
+    // this.risk_exposure_smoke_secondhand = PendingPatient.mapNYU(obj['Second Hand Smoke Exposure']);
+    // this.risk_exposure_smoke_secondhand = this.risk_exposure_smoke_secondhand ? this.risk_exposure_smoke_secondhand : 2;
+    // this.notes = null;
+    // this.owner_doctor = null;
+    // this.email = obj['email'] ? _.toLower(obj['email']) : null;
+    // this.primary_contact = obj['primary_phone_number'] ? obj['primary_phone_number'] : null;
+    // this.secondary_mrn = obj['MRN'] ? obj['MRN'] : null;
+    this.submitted_acr = null;
+        this.date_scheduled = obj['Exam Date'] ? this.parseDate(obj['Exam Date']) : null;
+        this.procedure_type = 2; // TODO: Need to make it dynamic in future. For now its Only according to CCF Requirement.
+        //this.exam_indication = obj['Indication Of Exam'] ? 1 : 0;
+        this.date_performed = obj['Exam Date'] ? this.parseDate(obj['Exam Date']) : null;
+        this.patient_id = patientID;
+        this.is_completed = false;
+        this.is_active = true;
+        this.smoking_status = this.mapSmokeStatusCCF(obj["Smoking Status"] || '9') ;
+        this.smoking_quit_date = obj['Number Of Years Since Quit'] ? moment(this.parseDate(obj['Exam Date'])).subtract(obj['Number Of Years Since Quit'], 'years') : null;
+        this.smoking_quit_years_since = obj["Number Of Years Since Quit"] ? obj["Number Of Years Since Quit"] : null;
+        this.smoking_pack_years = obj["Number Of Packs Year Smoking"] ? obj["Number Of Packs Year Smoking"] : null;
+        this.smoking_cessation_guide = this.smoking_status && this.smoking_status == 0 ? 1 : 2 //this.mapNYU(obj['Did Physician Provide Guidance']);
+        this.smoking_shared_decision = 1;//this.mapNYU(obj['Doc Of Shared Dec Making']);
+        this.patient_height = obj["Patient Height"] ? obj["Patient Height"] : 0;
+        this.patient_weight = obj["Patient Weight"] ? obj["Patient Weight"] : 0;
+        // this.performed_age = ;
+        this.facility_id = obj['campusId'] == 4 ? '104245' : null;
+        this.facility_npi = obj['campusId'] == 4 ? '1144249657' : null;
+        this.radiologist_reading_npi = obj['Radiologist Reading NPI'];
+        this.practitioner_ordering_npi = obj['Ordering Practitioner NPI'];
+        this.practitioner_ordering_name_first = obj["Ordering Practitioner First Name"] ? _.startCase(_.toLower(obj["Ordering Practitioner First Name"])) : null;
+        this.practitioner_ordering_name_last = obj["Ordering Practitioner Last Name"] ?  _.startCase(_.toLower(obj["Ordering Practitioner Last Name"])) : null;
+        this.lung_cancer_signs = this.mapNYU(obj['Signs Or Symptoms Of Lung Cancer']) == 2 ? 0 : this.mapNYU(obj['Signs Or Symptoms Of Lung Cancer']);
+        this.exam_significant_abnormalities = 0;
+        // this.exam_significant_finding = this.exam_significant_abnormalities == 1 ? this.mapExamSignificantFindings(obj['What Were The Other Findings']) : null;
+        // this.exam_significant_mass = this.exam_significant_finding && (~(this.exam_significant_finding).toString().indexOf('3')) ? obj['Mass Spec'] : null;
+        // this.exam_significant_interstitial = this.exam_significant_finding && (~(this.exam_significant_finding).toString().indexOf('4')) ? obj['Other Int Lung Disease'] : null;
+        // this.exam_significant_interstitial_other = this.exam_significant_interstitial == 8 ? obj['Other Int Lung Disease Spec'] :null;
+        this.exam_indication_type = obj.exam_indication_type ? obj.exam_indication_type : null;
+        // this.exam_radiology_contrast = ;
+        this.exam_radiology_modality = 1;//obj['Modality'] ? obj['Modality'] : null;
+        this.exam_radiology_ct_manufacturer = obj["CT Scanner Manufacturer"] || 0;
+        this.exam_radiology_ct_model = obj['CT Scanner Model'] || "000";
+        this.exam_radiology_dose_vol = obj['CTDIvol'] ? obj['CTDIvol'] : 0;
+        this.exam_radiology_ct_image_width = ~this.exam_radiology_ct_model.toString().toLowerCase().indexOf('VCT 64 Slice'.toLowerCase()) ? 1.25 : 0;
+        this.exam_radiology_ct_image_width = ~this.exam_radiology_ct_model.toString().toLowerCase().indexOf('8 slice'.toLowerCase()) ? 2.50 : 1.25;
+        this.exam_radiology_dose_length = obj['DLP'] ? obj['DLP'] : 0;
+        // this.exam_radiology_pitch = obj['Pitch'] ? obj['Pitch'] : null;
+        // this.tube_current_time = obj['Tube Current Time'] ? obj['Tube Current Time'] : null;
+        // this.tube_voltage = obj['Tube Voltage'] ? obj['Tube Voltage'] : null;
+        // this.scanning_time = obj["Scanning Time"] ? obj["Scanning Time"] : null;
+        // this.scanning_volume = obj["Scanning Volume"] ? obj["Scanning Volume"] : null;
+        // this.lung_rads = this.mapCCFLungRads(obj['CT Exam Result Lung RADS']);
+        // this.exam_radiology_ct_recall = this.lung_rads == 0 ? this.mapCCFReasonForRecall(obj['Reason For Recall']) : null ;
+        this.lung_nodule_found = obj['Was A Nodule Found'] && obj['Was A Nodule Found'].toLowerCase().startsWith("Y") ? 1: 0;
+        //this.lung_nodule_found_date = this.lung_nodule_found == 1 ? this.parseDate(obj['Date of LDCT SCAN']) : null; 
+        this.lung_nodule_size = obj['Nodule Size'] ? obj['Nodule Size'] : null;
+        this.lung_rads = obj["LungRads"] ? this.mapCCFLungRads(obj["LungRads"]) : null 
+
+        "Cinic Pt":"no",
+"Patient First Name":"Patricia",
+"Patient Last Name":"Dewenter",
+"Exam Date":"4/4/2018",
+"CT Exam Result Lung RADS":"",
+"Smoking Status":"1",
+"Number of Packs Per Day":1,
+"Number Of Packs Year Smoking":45,
+"Ordering Practitioner First Name":"Adam",
+"Ordering Practitioner Last Name":"Wolfe",
+"Number of Packs Day Smoking":"",
+"follow_up_diagnostic":"",
+"Smoking Quit Date":"",
+"Nodule Size":""
+},
